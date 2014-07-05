@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 int main()
 {
 	int n, m, a, b, c = 1, x = 1;
@@ -51,7 +51,7 @@ int main()
 		}
 		break;
 	default:
-		printf("´Ù¸¥°Å ÀÔ·ÂÇÏ¼Ë¾î¿ä.\n");
+		printf("ë‹¤ë¥¸ê±° ìž…ë ¥í•˜ì…§ì–´ìš”.\n");
 		break;
 	}
 	return 0;
