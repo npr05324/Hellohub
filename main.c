@@ -1,58 +1,19 @@
 ﻿#include <stdio.h>
-int main()
-{
-	int n, m, a, b, c = 1, x = 1;
-	printf("Please Choose Form:");
-	scanf_s("%d", &m);
-	printf("Please Input n:");
-	scanf_s("%d", &n);
-	switch (m)
-	{
-	case 1:
-		c = n;
-		for (b = 0; b<c; b++)
-		{
-			for (a = 1; a <= n; n--)
-			{
-				printf("%3d", x);
+int main(){
+	int num, trns, k = 0, sum = 0;
+	for (num = 2; num < 1000; num++){
+		for (trns = 2; trns < num; trns++){
+			if (num % trns == 0){ //num 과 trns 가 같을경우 합성수 단, trns의 범위는 num미만.
+				k++; // 체크용 변수
 			}
-			n = c;
-			x++;
-			printf("\n");
 		}
-		break;
-	case 2:
-		for (b = 0; b <= n / 2; b++)
-		{
-			c = 1;
-			for (a = 0; a<n; a++)
-			{
-				printf("%3d", c);
-				c++;
-			}
-			printf("\n");
-			c = n;
-			for (a = 0; a<n; a++)
-			{
-				printf("%3d", c);
-				c--;
-			}
-			printf("\n");
+		if (k == 0){  // k가 1일시 나누어 지게 되어 합성수 k가 0일시 자기 자신빼고는 나누어 지는게 없다. 
+			sum += num; // 소수일시 sum 이라는 변수에 num+sum을 저장한다.
+			printf("%d는 소수\n", num);
 		}
-		break;
-	case 3:
-		for (a = 1; a <= n; a++)
-		{
-			for (b = 1; b <= n; b++)
-			{
-				printf("%3d", a*b);
-			}
-			printf("\n");
-		}
-		break;
-	default:
-		printf("다른거 입력하셧어요.\n");
-		break;
+		k = 0;
 	}
-	return 0;
+	printf("1~1000까지의 소수의 합:%d\n", sum);
+
+
 }
